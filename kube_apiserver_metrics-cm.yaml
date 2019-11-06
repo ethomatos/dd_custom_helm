@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-apiserver-metrics-configmap
+  namespace: default
+data:
+  conf.yaml: |-
+    ad_identifiers:
+      - kube-apiserver
+    init_config:
+    instances:
+      - prometheus_url: "%%host%%:6443/metrics"
+        tags:
+          - "apiserver:%%host%%"

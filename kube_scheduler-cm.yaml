@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-scheduler-configmap
+  namespace: default
+data:
+  conf.yaml: |-
+    ad_identifiers:
+      - kube-scheduler
+    init_config:
+    instances:
+      - prometheus_url: http://%%host%%:10251/metrics

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: processd-configmap
+  namespace: default
+data:
+  conf.yaml: |-
+    init_config:
+    instances:
+      - name: process-agent
+        search_string:
+          - "process-agent"
+      - name: trace-agent
+        search_string:
+          - "trace-agent"
+      - name: ssh-agent
+        search_string:
+          - "ssh-agent"
+      - name: zoom
+        search_string:
+          - "zoom"

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-ctrl-mgr-configmap
+  namespace: default
+data:
+  conf.yaml: |-
+    ad_identifiers:
+      - kube-controller-manager
+    init_config:
+    instances:
+      - prometheus_url: http://%%host%%:10252/metrics

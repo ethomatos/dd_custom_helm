@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rsyslog-configmap
+  namespace: default
+data:
+  conf.yaml: |-
+    logs:
+      - type: file
+        path: /var/syslog/syslog
+        service: rsyslog
+        source: rsyslog
